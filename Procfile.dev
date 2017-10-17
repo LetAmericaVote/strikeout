@@ -1,0 +1,2 @@
+web: NODE_ENV=development nodemon server/index.js
+assets: NODE_ENV=development npm start
