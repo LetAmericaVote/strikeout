@@ -18,6 +18,15 @@ const config = {
         exclude: /node_modules/,
         loader: 'babel-loader',
       },
+      {
+        test: /\.(woff|woff2|ttf|eot)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 50000,
+          mimetype: 'application/font-[ext]',
+          name: './fonts/[name].[ext]',
+        },
+      },
     ],
   },
   plugins: [

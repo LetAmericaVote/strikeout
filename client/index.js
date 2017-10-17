@@ -4,18 +4,18 @@ import { Provider } from 'react-redux';
 
 import createStore from './core/store';
 import { RoutingProvider, Route } from './core/routing';
+import { StyleProvider } from './core/styling';
 
 const store = createStore();
 
-import MarkdownRenderer from './core/markdown/MarkdownRenderer';
-const Test = () => <MarkdownRenderer markdown="# test" />
-
 render((
   <Provider store={store}>
-    <RoutingProvider>
-      <div>
-        <Route path="/"><Test /></Route>
-      </div>
-    </RoutingProvider>
+    <StyleProvider>
+      <RoutingProvider>
+        <div>
+          <Route path="/"><h1>Yo</h1></Route>
+        </div>
+      </RoutingProvider>
+    </StyleProvider>
   </Provider>
 ), document.getElementById('root'));

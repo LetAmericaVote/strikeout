@@ -8,6 +8,9 @@ const initialState = {
     pathname: '',
     history: [],
   },
+  styling: {
+    classes: {},
+  },
 };
 
 /**

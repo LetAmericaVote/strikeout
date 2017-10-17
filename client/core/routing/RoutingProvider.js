@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import createHistory from 'history/createBrowserHistory';
 import { setPathname } from '../../actions';
 
-class Provider extends React.Component {
+class RoutingProvider extends React.Component {
   constructor(props) {
     super(props);
 
@@ -33,13 +33,13 @@ class Provider extends React.Component {
   }
 }
 
-Provider.propTypes = {
+RoutingProvider.propTypes = {
   children: PropTypes.node.isRequired,
   setPathname: PropTypes.func.isRequired,
 };
 
-Provider.actionCreators = {
+RoutingProvider.actionCreators = {
   setPathname,
 };
 
-export default connect(null, Provider.actionCreators)(Provider);
+export default connect(null, RoutingProvider.actionCreators)(RoutingProvider);
