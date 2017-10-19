@@ -8,30 +8,12 @@
   @include common-flex-direction();
 }
 
-.cell {
+.column {
   @include flex-reset();
 }
 
-.column-1 {
-  @include column(1);
-}
-
-.column-2 {
-  @include column(2);
-}
-
-.column-3 {
-  @include column(3);
-}
-
-.column-4 {
-  @include column(4);
-}
-
-.column-6 {
-  @include column(6);
-}
-
-.column-12 {
-  @include column(12);
+@for $i from 1 through 12 {
+  .column-#{$i} {
+    @include column($i);
+  }
 }

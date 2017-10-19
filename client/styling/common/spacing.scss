@@ -1,0 +1,17 @@
+@import '../utilities/toolbox.scss';
+
+.padding {
+  @include padding();
+}
+
+.padding-small {
+  @include padding(0.5);
+}
+
+.margin {
+  @include margin();
+}
+
+.margin-small {
+  @include margin(0.5);
+}

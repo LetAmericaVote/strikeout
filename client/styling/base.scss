@@ -2,10 +2,13 @@
 @import './utilities/reset.scss';
 @import './fonts/fonts.scss';
 
-@import './classes.scss';
+@import './common/color.scss';
+@import './common/image.scss';
+@import './common/spacing.scss';
+@import './common/display.scss';
 
-@import './patterns/grid.scss';
 @import './patterns/container.scss';
+@import './patterns/grid.scss';
 
 html {
   font-size: $base-font-size;

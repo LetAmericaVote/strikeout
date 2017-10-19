@@ -7,20 +7,20 @@
   }
 }
 
-@mixin margin() {
-  margin: $base-spacing;
+@mixin spacer($property, $modifier) {
+  #{$property}: $base-spacing * $modifier;
 
   @include media('min', $screen-desktop-small) {
-    margin: $double-spacing;
+    #{$property}: $double-spacing * $modifier;
   }
 }
 
-@mixin padding() {
-  padding: $base-spacing;
+@mixin margin($modifier: 1) {
+  @include spacer('margin', $modifier);
+}
 
-  @include media('min', $screen-desktop-small) {
-    padding: $double-spacing;
-  }
+@mixin padding($modifier: 1) {
+  @include spacer('padding', $modifier);
 }
 
 @mixin column($wide) {

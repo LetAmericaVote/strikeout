@@ -1,5 +1,5 @@
 @function column-flex-basis($wide) {
-  @return (100 / $wide) * 1%;
+  @return ($wide / 12) * 100 + 0%;
 }
 
 @function breakpoint($comparison, $screen) {

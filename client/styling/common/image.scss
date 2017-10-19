@@ -1,0 +1,17 @@
+@import '../utilities/toolbox.scss';
+
+.background-image-cover {
+  background-size: cover;
+}
+
+.background-image-100 {
+  background-size: 100% 100%;
+}
+
+.background-image-center {
+  background-position: center;
+}
+
+.background-no-repeat {
+  background-repeat: no-repeat;
+}
