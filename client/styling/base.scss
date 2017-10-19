@@ -1,0 +1,9 @@
+@import './toolbox.scss';
+@import './fonts/fonts.scss';
+@import './reset.scss';
+
+html {
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+}

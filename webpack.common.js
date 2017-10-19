@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const DIST_PATH = path.resolve(__dirname, 'public/dist');
 
@@ -27,10 +28,31 @@ const config = {
           name: './fonts/[name].[ext]',
         },
       },
+      {
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            'sass-loader',
+            {
+              loader: 'postcss-loader',
+              options: {
+                cssnext: {},
+                cssnano: {},
+              },
+            },
+          ],
+        }),
+      },
     ],
   },
   plugins: [
     new CleanWebpackPlugin([DIST_PATH]),
+    new ExtractTextPlugin({
+      filename: 'style.css',
+      allChunks: true,
+    }),
   ],
 };
 

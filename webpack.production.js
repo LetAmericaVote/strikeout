@@ -14,7 +14,7 @@ const config = merge(common, {
     }),
     new MinifyPlugin(),
     new CompressionPlugin({
-      test: /\.js/,
+      test: /\.(js|css)$/,
       algorithm: 'gzip',
     }),
   ],
