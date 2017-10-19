@@ -1,17 +1,16 @@
 @import './variables.scss';
+@import './functions.scss';
 
-@mixin media($breakpoint) {
-  @media #{$breakpoint} {
+@mixin media($comparison, $screen) {
+  @media #{breakpoint($comparison, $screen)} {
     @content;
   }
 }
 
-// TODO: Can we make a mixin to make this DRY?
-
 @mixin margin() {
   margin: $base-spacing;
 
-  @include media($screen-desktop-small) {
+  @include media('min', $screen-desktop-small) {
     margin: $double-spacing;
   }
 }
@@ -19,7 +18,29 @@
 @mixin padding() {
   padding: $base-spacing;
 
-  @include media($screen-desktop-small) {
+  @include media('min', $screen-desktop-small) {
     padding: $double-spacing;
+  }
+}
+
+@mixin column($wide) {
+  flex-basis: column-flex-basis(1);
+
+  @include media('min', $screen-mobile-large) {
+    flex-basis: column-flex-basis($wide);
+  }
+}
+
+@mixin flex-reset() {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+@mixin common-flex-direction() {
+  flex-direction: row;
+
+  @include media('max', $screen-mobile-large) {
+    flex-direction: column;
   }
 }

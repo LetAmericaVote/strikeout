@@ -4,16 +4,27 @@ import { Provider } from 'react-redux';
 
 import createStore from './core/store';
 import { RoutingProvider, Route } from './core/routing';
+import { Container, Grid, Cell } from './core/grid';
 
 import './styling/base.scss';
 
 const store = createStore();
 
+const Test = () => (
+  <Container maxWidth padding>
+    <Grid classes={['padding']}>
+      <Cell column={4}>test</Cell>
+      <Cell column={4}>test</Cell>
+      <Cell column={4}>test</Cell>
+    </Grid>
+  </Container>
+);
+
 render((
   <Provider store={store}>
     <RoutingProvider>
       <div>
-        <Route path="/"><h1>Yo</h1></Route>
+        <Route path="/"><Test /></Route>
       </div>
     </RoutingProvider>
   </Provider>

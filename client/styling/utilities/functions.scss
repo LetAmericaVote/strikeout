@@ -1,0 +1,7 @@
+@function column-flex-basis($wide) {
+  @return (100 / $wide) * 1%;
+}
+
+@function breakpoint($comparison, $screen) {
+  @return "(" + $comparison + "-width: " + $screen + ")";
+}

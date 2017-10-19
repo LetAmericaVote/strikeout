@@ -9,9 +9,11 @@ $bold-font-family: 'MrEavesModOT';
 $base-spacing: 1.2rem;
 $double-spacing: $base-spacing * 2;
 
-$screen-mobile-small: "(max-width: 320px)";
-$screen-mobile-large: "(min-width: 425px)";
-$screen-tablet: "(min-width: 768px)";
-$screen-desktop-small: "(min-width: 1024px)";
-$screen-desktop-large: "(min-width: 1440px)";
-$screen-4k: "(min-width: 2560px)";
+$screen-mobile-small: 320px;
+$screen-mobile-large: 425px;
+$screen-tablet: 768px;
+$screen-desktop-small: 1024px;
+$screen-desktop-large: 1440px;
+$screen-4k: 2560px;
+
+$max-width: 990px;

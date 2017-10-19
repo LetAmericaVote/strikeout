@@ -2,21 +2,36 @@
 
 .grid {
   display: flex;
-  flex: 0 0 8.33333333333%; // TODO: Is this the best approach for 12 col?
 }
 
-.grid-spacing {
-  @include margin();
+.grid-common-direction {
+  @include common-flex-direction();
 }
 
 .cell {
-  flex: 1;
+  @include flex-reset();
 }
 
-.cell-gutter {
-  @include margin();
+.column-1 {
+  @include column(1);
 }
 
-.cell-spacing {
-  @include padding();
+.column-2 {
+  @include column(2);
+}
+
+.column-3 {
+  @include column(3);
+}
+
+.column-4 {
+  @include column(4);
+}
+
+.column-6 {
+  @include column(6);
+}
+
+.column-12 {
+  @include column(12);
 }
