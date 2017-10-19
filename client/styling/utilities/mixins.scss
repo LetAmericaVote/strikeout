@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+@mixin media($breakpoint) {
+  @media #{$breakpoint} {
+    @content;
+  }
+}
+
+// TODO: Can we make a mixin to make this DRY?
+
+@mixin margin() {
+  margin: $base-spacing;
+
+  @include media($screen-desktop-small) {
+    margin: $double-spacing;
+  }
+}
+
+@mixin padding() {
+  padding: $base-spacing;
+
+  @include media($screen-desktop-small) {
+    padding: $double-spacing;
+  }
+}

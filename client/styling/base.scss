@@ -1,6 +1,8 @@
-@import './toolbox.scss';
+@import './utilities/toolbox.scss';
+@import './utilities/reset.scss';
 @import './fonts/fonts.scss';
-@import './reset.scss';
+
+@import './patterns/grid.scss';
 
 html {
   font-size: $base-font-size;

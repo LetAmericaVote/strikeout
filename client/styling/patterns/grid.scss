@@ -1,0 +1,22 @@
+@import '../utilities/toolbox.scss';
+
+.grid {
+  display: flex;
+  flex: 0 0 8.33333333333%; // TODO: Is this the best approach for 12 col?
+}
+
+.grid-spacing {
+  @include margin();
+}
+
+.cell {
+  flex: 1;
+}
+
+.cell-gutter {
+  @include margin();
+}
+
+.cell-spacing {
+  @include padding();
+}

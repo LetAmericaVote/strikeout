@@ -1,0 +1,17 @@
+$base-font-size: 20px;
+
+$base-font-weight: 300;
+$bold-font-weight: 700;
+
+$base-font-family: 'MrEavesModOTBook';
+$bold-font-family: 'MrEavesModOT';
+
+$base-spacing: 1.2rem;
+$double-spacing: $base-spacing * 2;
+
+$screen-mobile-small: "(max-width: 320px)";
+$screen-mobile-large: "(min-width: 425px)";
+$screen-tablet: "(min-width: 768px)";
+$screen-desktop-small: "(min-width: 1024px)";
+$screen-desktop-large: "(min-width: 1440px)";
+$screen-4k: "(min-width: 2560px)";
