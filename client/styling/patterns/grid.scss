@@ -12,6 +12,14 @@
   flex-wrap: wrap;
 }
 
+.grid-justify-center {
+  justify-content: center;
+}
+
+.grid-align-center {
+  align-items: center;
+}
+
 .column {
   @include flex-reset();
 }

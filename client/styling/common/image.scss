@@ -15,3 +15,11 @@
 .background-no-repeat {
   background-repeat: no-repeat;
 }
+
+.background-image-height-hero {
+  height: 50vh;
+
+  @include media('min', $screen-tablet) {
+    height: 60vh;
+  }
+}
