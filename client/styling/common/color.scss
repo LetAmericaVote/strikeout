@@ -11,3 +11,13 @@
 .background-color-dark-blue {
   background-color: $dark-blue;
 }
+
+.hover-background-light-blue {
+  &:hover {
+    background-color: $light-blue;
+  }
+}
+
+.highlight-light-blue {
+  box-shadow: inset 0 -0.45em 0 $light-blue;
+}

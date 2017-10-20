@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import classnames from 'classnames';
 import { Grid, Column, Container } from '../../core/grid';
 import { Link } from '../../core/routing';
 import logo from './logo.png';
@@ -16,18 +18,30 @@ const Logo = () => (
   </Link>
 );
 
-const NavLink = ({ label, path }) => (
+const NavLinkPath = (label, path) => path || `/${label}`;
+
+const NavLinkComponent = ({ label, path, activePath }) => (
   <Link
     label={label}
-    to={path || `/${label}`}
+    to={NavLinkPath(label, path)}
     classes={[
       'padding-small-horizontal', 'display-flex',
       'highlight', 'cursor-pointer',
     ]}
   >
-    <span>{ label }</span>
+    <span
+      className={classnames('hover-background-light-blue', {
+        'highlight-light-blue': activePath === NavLinkPath(label, path)
+      })}
+    >{ label }</span>
   </Link>
 );
+
+const NavLink = connect(
+  state => ({
+    activePath: state.routing.pathname,
+  })
+)(NavLinkComponent);
 
 const Links = () => [
   <NavLink key="about" label="about" />,
