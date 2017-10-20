@@ -10,6 +10,20 @@ class RoutingProvider extends React.Component {
 
     this.history = createHistory();
     this.updateLocation = this.updateLocation.bind(this);
+    this.pushLocation = this.pushLocation.bind(this);
+  }
+
+  componentDidMount() {
+    const { history, updateLocation } = this;
+
+    updateLocation(history.location);
+    history.listen(location => updateLocation(location));
+  }
+
+  getChildContext() {
+    return {
+      pushLocation: this.pushLocation,
+    };
   }
 
   updateLocation(location) {
@@ -21,17 +35,23 @@ class RoutingProvider extends React.Component {
     this.props.setPathname(location.pathname);
   }
 
-  componentDidMount() {
-    const { history, updateLocation } = this;
+  pushLocation(path) {
+    if (path.startsWith('http')) {
+      window.location = path;
+      return;
+    }
 
-    updateLocation(history.location);
-    history.listen(location => updateLocation(location));
+    this.history.push(path);
   }
 
   render() {
     return React.Children.only(this.props.children);
   }
 }
+
+RoutingProvider.childContextTypes = {
+  pushLocation: PropTypes.func,
+};
 
 RoutingProvider.propTypes = {
   children: PropTypes.node.isRequired,

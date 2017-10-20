@@ -3,8 +3,7 @@ import classnames from 'classnames';
 
 const Column = ({ children, classes, size }) => (
   <div
-    className={classnames('column', {
-      ...classes,
+    className={classnames('column', ...classes, {
       [`column-${size}`]: size,
     })}
   >{children}</div>

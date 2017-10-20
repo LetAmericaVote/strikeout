@@ -8,6 +8,10 @@
   @include common-flex-direction();
 }
 
+.grid-wrap {
+  flex-wrap: wrap;
+}
+
 .column {
   @include flex-reset();
 }

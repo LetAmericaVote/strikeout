@@ -6,7 +6,7 @@ import createStore from './core/store';
 import { RoutingProvider, Route } from './core/routing';
 import { Container, Grid, Column } from './core/grid';
 
-import Nav from './components/Nav';
+import ActionPage from './components/ActionPage';
 
 import './styling/base.scss';
 
@@ -16,8 +16,7 @@ render((
   <Provider store={store}>
     <RoutingProvider>
       <div>
-        <Nav />
-        <Route path="/"><Test /></Route>
+        <Route path="/action"><ActionPage /></Route>
       </div>
     </RoutingProvider>
   </Provider>

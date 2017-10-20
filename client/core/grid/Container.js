@@ -4,8 +4,7 @@ import classnames from 'classnames';
 const Container = ({ children, maxWidth, classes }) => (
   <div
     className={
-      classnames('container', {
-        ...classes,
+      classnames('container', classes, {
         'container-max': maxWidth,
       })
     }

@@ -8,10 +8,32 @@
   @include padding(0.5);
 }
 
+.padding-small-horizontal{
+  @include spacer('padding-left', 0.25);
+  @include spacer('padding-right', 0.25);
+}
+
 .margin {
   @include margin();
 }
 
 .margin-small {
   @include margin(0.5);
+}
+
+.margin-top {
+  margin-top: $half-spacing;
+}
+
+.margin-vertical-auto {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.overflow-horizontal-scroll {
+  overflow-x: scroll;
+}
+
+.overflow-vertical-hidden {
+  overflow-y: hidden;
 }
