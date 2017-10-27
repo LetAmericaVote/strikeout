@@ -25,6 +25,11 @@
   margin-top: $half-spacing;
 }
 
+.margin-vertical {
+  @include spacer('margin-top', 1);
+  @include spacer('margin-bottom', 1);
+}
+
 .margin-vertical-auto {
   margin-top: auto;
   margin-bottom: auto;

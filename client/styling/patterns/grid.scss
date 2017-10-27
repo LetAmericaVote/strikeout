@@ -4,8 +4,16 @@
   display: flex;
 }
 
+.grid-inline {
+  display: inline-flex;
+}
+
 .grid-common-direction {
   @include common-flex-direction();
+}
+
+.grid-column-direction {
+  flex-direction: column;
 }
 
 .grid-wrap {
