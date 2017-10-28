@@ -88,6 +88,11 @@
 @mixin copy() {
   p {
     @include copy-shared();
-    @include type-size(1rem, 1.2rem, 1.4rem);
+    @include type-size(1rem, 1.1rem, 1.2rem);
+  }
+
+  strong {
+    font-family: $bold-font-family;
+    font-weight: $bold-font-weight;
   }
 }

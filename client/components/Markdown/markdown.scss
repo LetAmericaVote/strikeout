@@ -9,6 +9,15 @@
   h2 {
     @include spacing('margin-top', 0.3, 0.1);
     @include spacing('margin-bottom', 0.3, 0.1);
+    color: $red;
+    font-family: $base-font-family;
+    font-weight: $base-font-weight;
+  }
+
+  h6 {
+    @include type-size(0.6rem, 0.7rem, 0.8rem);
+    color: $gray;
+    text-transform: none;
   }
 
   h3, h4, h4, h6 {
