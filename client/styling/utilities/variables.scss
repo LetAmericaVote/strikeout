@@ -1,4 +1,8 @@
 $base-font-size: 20px;
+$base-letter-spacing: 0.03em;
+$header-letter-spacing: 0.08em;
+$base-line-height: 1.2;
+$header-line-height: 1.45;
 
 $base-font-weight: 300;
 $bold-font-weight: 700;
@@ -6,16 +10,16 @@ $bold-font-weight: 700;
 $base-font-family: 'MrEavesModOTBook';
 $bold-font-family: 'MrEavesModOT';
 
-$base-spacing: 1.2rem;
-$double-spacing: $base-spacing * 2;
-$half-spacing: $base-spacing / 2;
+$base-spacing: 1rem;
 
-$screen-mobile-small: 320px;
-$screen-mobile-large: 425px;
-$screen-tablet: 768px;
-$screen-desktop-small: 1024px;
-$screen-desktop-large: 1440px;
-$screen-4k: 2560px;
+$breakpoints: (
+  mobile-small: 320px,
+  mobile-large: 425px,
+  tablet: 768px,
+  desktop-small: 1024px,
+  desktop-large: 1440px,
+  4k: 2560px,
+);
 
 $max-width: 990px;
 

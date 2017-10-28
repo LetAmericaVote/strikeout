@@ -1,0 +1,93 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+@mixin root-typography() {
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  letter-spacing: $base-letter-spacing;
+  line-height: $base-line-height;
+
+  @include typography();
+}
+
+@mixin typography() {
+  @include headers();
+  @include copy();
+}
+
+@mixin type-size($small, $medium, $large) {
+  font-size: $small;
+
+  @include min-query(tablet) {
+    font-size: $medium;
+  }
+
+  @include min-query(desktop-small) {
+    font-size: $large;
+  }
+}
+
+@mixin kerning() {
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin header-shared() {
+  @include kerning();
+  display: block;
+  font-family: $bold-font-family;
+  font-weight: $bold-font-weight;
+  letter-spacing: $header-letter-spacing;
+  line-height: $header-line-height;
+  text-transform: uppercase;
+}
+
+@mixin headers() {
+  h1 {
+    @include header-shared();
+    @include type-size(2rem, 2.4rem, 3rem);
+  }
+
+  h2 {
+    @include header-shared();
+    @include type-size(1.6rem, 2rem, 2.4rem);
+  }
+
+  h3 {
+    @include header-shared();
+    @include type-size(1.2rem, 1.6rem, 2rem);
+  }
+
+  h4 {
+    @include header-shared();
+    @include type-size(1rem, 1.4rem, 1.8rem);
+  }
+
+  h5 {
+    @include header-shared();
+    @include type-size(0.8rem, 1.2rem, 1.6rem);
+  }
+
+  h6 {
+    @include header-shared();
+    @include type-size(0.6rem, 1rem, 1.4rem);
+  }
+}
+
+@mixin copy-shared() {
+  @include kerning();
+  display: block;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  letter-spacing: $base-letter-spacing;
+  line-height: $base-line-height;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin copy() {
+  p {
+    @include copy-shared();
+    @include type-size(1rem, 1.2rem, 1.4rem);
+  }
+}

@@ -2,6 +2,8 @@ export h1 from './_h1';
 export h2 from './_h2';
 export h3 from './_h3';
 export h4 from './_h4';
+export h5 from './_h5';
+export h6 from './_h6';
 
 export blockquote from './_blockquote';
 

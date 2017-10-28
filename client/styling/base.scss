@@ -1,20 +1,7 @@
-@import './utilities/toolbox.scss';
+@import './toolbox.scss';
 @import './utilities/reset.scss';
 @import './fonts/fonts.scss';
 
-@import './common/color.scss';
-@import './common/display.scss';
-@import './common/image.scss';
-@import './common/misc.scss';
-@import './common/size.scss';
-@import './common/spacing.scss';
-@import './common/typography.scss';
-
-@import './patterns/container.scss';
-@import './patterns/grid.scss';
-
 html {
-  font-size: $base-font-size;
-  font-family: $base-font-family;
-  font-weight: $base-font-weight;
+  @include root-typography();
 }

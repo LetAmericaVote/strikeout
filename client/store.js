@@ -1,15 +1,12 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
-import * as reducers from '../reducers';
+import * as reducers from './reducers';
 
 const initialState = {
   routing: {
     pathname: '',
     history: [],
-  },
-  styling: {
-    classes: {},
   },
 };
 

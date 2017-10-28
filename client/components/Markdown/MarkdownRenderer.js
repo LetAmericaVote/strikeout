@@ -3,6 +3,8 @@ import marksy from 'marksy';
 import MarkdownErrorBoundry from './MarkdownErrorBoundry';
 import * as elements from './elements';
 
+import './markdown.scss';
+
 const MarkdownRenderer = (props) => {
   const { markdown } = props;
 
@@ -12,9 +14,11 @@ const MarkdownRenderer = (props) => {
   });
 
   return (
-    <MarkdownErrorBoundry>
-      { compile(markdown, {}, {}).tree }
-    </MarkdownErrorBoundry>
+    <div className="markdown">
+      <MarkdownErrorBoundry>
+        { compile(markdown, {}, {}).tree }
+      </MarkdownErrorBoundry>
+    </div>
   );
 };
 

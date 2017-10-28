@@ -1,33 +1,27 @@
 @import './variables.scss';
 @import './functions.scss';
 
-@mixin media($comparison, $screen) {
-  @media #{breakpoint($comparison, $screen)} {
+@mixin media-query($comparison, $breakpoint) {
+  @media ($comparison + "-width": #{map-get($breakpoints, $breakpoint)}) {
     @content;
   }
 }
 
-@mixin spacer($property, $modifier) {
-  #{$property}: $base-spacing * $modifier;
-
-  @include media('min', $screen-desktop-small) {
-    #{$property}: $double-spacing * $modifier;
+@mixin min-query($breakpoint) {
+  @include media-query('min', $breakpoint) {
+    @content;
   }
 }
 
-@mixin margin($modifier: 1) {
-  @include spacer('margin', $modifier);
-}
+@mixin spacing($property, $base-modifier, $increment) {
+  #{$property}: $base-spacing * $base-modifier;
 
-@mixin padding($modifier: 1) {
-  @include spacer('padding', $modifier);
-}
+  @include min-query(tablet) {
+    #{$property}: ($base-spacing * $base-modifier) + $increment;
+  }
 
-@mixin column($wide) {
-  flex-basis: column-flex-basis(1);
-
-  @include media('min', $screen-mobile-large) {
-    flex-basis: column-flex-basis($wide);
+  @include min-query(desktop-small) {
+    #{$property}: ($base-spacing * $base-modifier) + ($increment * 2);
   }
 }
 
@@ -37,10 +31,10 @@
   flex-basis: auto;
 }
 
-@mixin common-flex-direction() {
-  flex-direction: row;
+@mixin natural-flex-direction($breakpoint) {
+  flex-direction: column;
 
-  @include media('max', $screen-mobile-large) {
-    flex-direction: column;
+  @include min-query($breakpoint) {
+    flex-direction: row;
   }
 }
