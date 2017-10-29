@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+import './flex.scss';
+
 const Flex = ({ children, className }) => (
   <div className={classnames('flex', className)}>
     { children }
