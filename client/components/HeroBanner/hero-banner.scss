@@ -4,6 +4,10 @@
   display: block;
   position: relative;
 
+  &.-center {
+    text-align: center;
+  }
+
   .hero-banner__background {
     position: absolute;
     width: 100%;

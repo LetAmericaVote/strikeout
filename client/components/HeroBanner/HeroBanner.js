@@ -17,7 +17,10 @@ const HeroBanner = (props) => {
   );
 
   return (
-    <div className="hero-banner">
+    <div className={classnames('hero-banner', {
+        '-center': props.bannerLayout === BANNER_CENTER,
+      }
+    )}>
       <BackgroundImage />
       <h1 className="hero-banner__copy">{props.bannerCopy}</h1>
     </div>
