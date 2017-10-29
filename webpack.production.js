@@ -10,6 +10,8 @@ const config = merge(common, {
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': JSON.stringify('production'),
+        'CONTENTFUL_SPACE': JSON.stringify(process.env.CONTENTFUL_SPACE),
+        'CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
       },
     }),
     new MinifyPlugin(),

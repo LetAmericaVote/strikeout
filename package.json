@@ -15,6 +15,7 @@
     "classnames": "^2.2.5",
     "clean-webpack-plugin": "^0.1.17",
     "compression-webpack-plugin": "^1.0.1",
+    "contentful": "^5.0.2",
     "css-loader": "^0.28.7",
     "dotenv": "^4.0.0",
     "express": "^4.16.1",

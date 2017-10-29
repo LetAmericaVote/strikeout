@@ -7,6 +7,8 @@ strikeout
 
 ```js
 npm install
+
+cp .env.example .env
 ```
 
 ## Usage
