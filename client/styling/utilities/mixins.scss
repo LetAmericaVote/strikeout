@@ -38,3 +38,31 @@
     flex-direction: row;
   }
 }
+
+@mixin button-styling($foreground, $background) {
+  color: $foreground;
+  background-color: $background;
+  padding: 0.5rem 1rem;
+  display: block;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: darken($background, 20%);
+  }
+}
+
+@mixin input-styling($color) {
+  color: $color;
+  padding: 0.25rem 0;
+  border-bottom: 1px solid $color;
+  width: 100%;
+  display: block;
+  margin-bottom: $base-spacing;
+
+  &:active {
+    border-bottom: 1px solid darken($color, 20%);
+  }
+}

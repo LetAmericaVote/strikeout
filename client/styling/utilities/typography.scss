@@ -14,6 +14,7 @@
 @mixin typography() {
   @include headers();
   @include copy();
+  @include forms();
 }
 
 @mixin type-size($small, $medium, $large) {
@@ -94,5 +95,19 @@
   strong {
     font-family: $bold-font-family;
     font-weight: $bold-font-weight;
+  }
+}
+
+@mixin forms() {
+  button {
+    @include copy-shared();
+    @include type-size(1rem, 1.1rem, 1.2rem);
+    font-family: $bold-font-family;
+    font-weight: $bold-font-weight;
+  }
+
+  input {
+    @include copy-shared();
+    @include type-size(1rem, 1.1rem, 1.2rem);
   }
 }

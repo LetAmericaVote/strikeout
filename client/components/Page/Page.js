@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Header from '../Header';
 import HeroBanner from '../HeroBanner';
+import Form from '../Form';
 
 const Page = ({ fields }) => {
   if (! fields || ! Object.keys(fields).length) {
@@ -23,6 +24,12 @@ const Page = ({ fields }) => {
       case 'heroBanner': {
         return (
           <HeroBanner key={module.sys.id} {...module.fields} />
+        );
+      };
+
+      case 'form': {
+        return (
+          <Form key={module.sys.id} {...module.fields} />
         );
       };
 

@@ -1,0 +1,70 @@
+@import '../../styling/toolbox.scss';
+
+@mixin form-max() {
+  max-width: $max-width;
+  margin: auto;
+}
+
+.form {
+  display: block;
+  width: 100%;
+
+  &.-blue {
+    background-color: $light-blue;
+
+    .form__submit {
+      @include button-styling($light-blue, $white);
+    }
+  }
+
+  &.-navy {
+    background-color: $dark-blue;
+
+    .form__submit {
+      @include button-styling($white, $red);
+    }
+
+    .form__input {
+      @include input-styling($white);
+    }
+  }
+
+  &.-compact {
+    @include form-max();
+  }
+
+  &.-full {
+    @include min-query(tablet) {
+      .form__inputs {
+        display: flex;
+      }
+
+      .form__input {
+        margin-right: $base-spacing;
+      }
+    }
+  }
+
+  .form__container {
+    @include form-max();
+    display: block;
+    padding: $base-spacing;
+  }
+
+  .form__disclaimer {
+    @include type-size(0.8rem, 0.8rem, 0.9rem);
+    color: $light-gray;
+  }
+
+  .form__submit {
+    width: 100%;
+    text-align: center;
+    margin-top: $base-spacing;
+
+    @include min-query(tablet) {
+      margin-left: auto;
+      margin-right: auto;
+      width: auto;
+    }
+  }
+}
