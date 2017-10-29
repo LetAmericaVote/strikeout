@@ -1,2 +1,2 @@
 export routing from './routing';
-export styling from './styling';
+export page from './page';

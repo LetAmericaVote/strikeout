@@ -2,9 +2,9 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { ContentfulRoute } from './contentful';
 import createStore from './store';
 import { RoutingProvider, Route } from './components/Routing';
+import ContentRoute from './components/ContentRoute';
 import Demo from './components/Demo';
 
 import './styling/base.scss';
@@ -20,11 +20,8 @@ render((
     <RoutingProvider>
       <div>
         { demoRoute }
-        <Route path="*"><ContentfulRoute /></Route>
+        <Route path="*"><ContentRoute /></Route>
       </div>
     </RoutingProvider>
   </Provider>
 ), document.getElementById('root'));
-
-// <Route path="/"><h1>Homepage</h1></Route>
-// <Route path="/action"><h1>Action</h1></Route>
