@@ -1,0 +1,39 @@
+@import '../../styling/toolbox.scss';
+
+@mixin highlight($color, $height: 'half') {
+  @if $height == 'half' {
+    h3 {
+      box-shadow: inset 0px -0.75rem $color;
+    }
+  } @else {
+    background-color: $color;
+  }
+}
+
+@mixin highlight-states($color) {
+  &.-is-active, &.-always-highlighted {
+    @include highlight($color);
+  }
+
+  &:hover {
+    @include highlight($color, 'full');
+  }
+
+  &:active {
+    @include highlight($color, 'full');
+  }
+}
+
+.highlighted-link {
+  @include highlight-states($light-blue);
+  display: block;
+
+  h3 {
+    font-size: 1rem;
+    padding-left: 1px;
+  }
+
+  &.-red {
+    @include highlight-states($red);
+  }
+}

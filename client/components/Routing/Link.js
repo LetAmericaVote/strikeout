@@ -1,22 +1,23 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const Link = ({ children, classes, to }, { pushLocation }) => (
-  <a onClick={() => pushLocation(to)} className={classnames(classes)}>
+import './link.scss';
+
+const Link = ({ children, className, to }, { pushLocation }) => (
+  <a onClick={() => pushLocation(to)} className={classnames('link', className)}>
     { children }
   </a>
 );
 
-Link.defaultProps = {
-  classes: [],
-};
-
 Link.propTypes = {
   children: PropTypes.node.isRequired,
-  classes: PropTypes.array,
+  className: PropTypes.string,
   to: PropTypes.string.isRequired,
+};
+
+Link.defaultProps = {
+  className: '',
 };
 
 Link.contextTypes = {

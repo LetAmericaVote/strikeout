@@ -1,0 +1,27 @@
+@import '../../styling/toolbox.scss';
+
+.header {
+  @include spacing('padding', 0.25, 0.25);
+  display: block;
+  margin-bottom: 2rem;
+
+  .header__logo {
+    float: left;
+
+    img {
+      width: 200px;
+      display: inline-block;
+    }
+  }
+
+  .header__nav {
+    display: inline-flex; //TODO this should be -inline on Flex
+    float: right;
+  }
+
+  .highlighted-link {
+    padding: $base-spacing / 2;
+    margin-left: $base-spacing / 2;
+    margin-right: $base-spacing / 2;
+  }
+}
