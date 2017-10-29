@@ -1,33 +1,63 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { Link, HighlightedLink } from '../Routing';
 import Flex, { FlexItem } from '../Flex';
 
 import './header.scss';
+import hamburger from './hamburger.png';
 
-const Header = (props) => {
-  const { logo, tabs } = props;
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
 
-  return (
-    <header className="header">
-      <Link to="/" className="header__logo">
-        <img src={logo} />
-      </Link>
-      <Flex className="header__nav">
-        {tabs.map(tab => (
-          <FlexItem key={tab.link}>
-            <HighlightedLink
-              label={tab.label}
-              link={tab.link}
-              highlightStyle={tab.highlightStyle}
-              alwaysHighlighted={tab.alwaysHighlighted}
-            />
-          </FlexItem>
-        ))}
-      </Flex>
-    </header>
-  );
-};
+    this.state = {
+      hamburger: false,
+    };
+
+    this.hamburgerClick = this.hamburgerClick.bind(this);
+  }
+
+  hamburgerClick() {
+    this.setState({
+      hamburger: ! this.state.hamburger,
+    });
+  }
+
+  render() {
+    const { logo, tabs } = this.props;
+
+    const navClassName = classnames('header__nav', {
+      '-open': this.state.hamburger,
+    });
+
+    return (
+      <header className="header">
+        <Link to="/" className="header__logo">
+          <img src={logo} />
+        </Link>
+        <img
+          src={hamburger}
+          alt="menu"
+          className="header__toggle"
+          onClick={this.hamburgerClick}
+        />
+        <Flex className={navClassName}>
+          {tabs.map(tab => (
+            <FlexItem key={tab.link}>
+              <HighlightedLink
+                label={tab.label}
+                link={tab.link}
+                highlightStyle={tab.highlightStyle}
+                alwaysHighlighted={tab.alwaysHighlighted}
+              />
+            </FlexItem>
+          ))}
+        </Flex>
+      </header>
+    );
+  }
+}
 
 Header.propTypes = {
   logo: PropTypes.string,

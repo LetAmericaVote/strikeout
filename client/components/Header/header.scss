@@ -3,7 +3,7 @@
 .header {
   @include spacing('padding', 0.25, 0.25);
   display: block;
-  margin-bottom: 2rem;
+  min-height: 3.25rem;
 
   .header__logo {
     float: left;
@@ -14,9 +14,35 @@
     }
   }
 
-  .header__nav {
-    display: inline-flex; //TODO this should be -inline on Flex
+  .header__toggle {
+    display: inline-block;
+    width: 32px;
     float: right;
+    margin: .5rem .25rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include min-query(desktop-small) {
+      display: none;
+    }
+  }
+
+  .header__nav {
+    display: none;
+
+    &.-open {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      background-color: $light-gray;
+    }
+
+    @include min-query(desktop-small) {
+      display: inline-flex;
+      float: right;
+    }
   }
 
   .highlighted-link {
