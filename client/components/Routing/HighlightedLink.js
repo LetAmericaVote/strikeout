@@ -17,13 +17,17 @@ const HighlightedLink = (props) => {
 
   return (
     <Link to={link} className={className}>
-      <h3>{ label }</h3>
+      <span>{ label }</span>
     </Link>
   );
 };
 
 HighlightedLink.propTypes = {
   label: PropTypes.string.isRequired,
+  label: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array,
+  ]).isRequired,
   link: PropTypes.string.isRequired,
   highlightStyle: PropTypes.string,
   alwaysHighlighted: PropTypes.bool,

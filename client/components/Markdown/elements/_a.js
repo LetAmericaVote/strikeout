@@ -1,12 +1,11 @@
 import React from 'react';
+import { HighlightedLink } from '../../Routing';
 
 const a = (props) => {
   const { href, title, target, children } = props;
 
   return (
-    <a href={href} title={title} target={target}>
-      { children }
-    </a>
+    <HighlightedLink label={children} link={href} alwaysHighlighted />
   );
 };
 

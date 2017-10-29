@@ -2,7 +2,7 @@
 
 @mixin highlight($color, $height: 'half') {
   @if $height == 'half' {
-    h3 {
+    span {
       box-shadow: inset 0px -0.75rem $color;
     }
   } @else {
@@ -26,9 +26,10 @@
 
 .highlighted-link {
   @include highlight-states($light-blue);
-  display: block;
+  display: inline-block;
 
-  h3 {
+  span {
+    @include header-shared();
     font-size: 1rem;
     padding-left: 1px;
   }

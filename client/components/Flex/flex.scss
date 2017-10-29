@@ -1,3 +1,13 @@
+@import '../../styling/toolbox.scss';
+
 .flex {
   display: flex;
+
+  &.-wrap-on-mobile {
+    flex-wrap: wrap;
+
+    @include min-query(tablet) {
+      flex-wrap: nowrap;
+    }
+  }
 }

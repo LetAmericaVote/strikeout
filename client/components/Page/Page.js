@@ -5,6 +5,10 @@ import { connect } from 'react-redux';
 import Header from '../Header';
 import HeroBanner from '../HeroBanner';
 import Form from '../Form';
+import ContentBlock from '../ContentBlock';
+
+import Container from '../Container';
+import Flex from '../Flex';
 
 const Page = ({ fields }) => {
   if (! fields || ! Object.keys(fields).length) {
@@ -18,6 +22,8 @@ const Page = ({ fields }) => {
       tabs={headerFields.tabs.map(tab => tab.fields)}
     />
   );
+
+  const containerModules = [];
 
   const Modules = () => fields.modules.map(module => {
     switch (module.sys.contentType.sys.id) {
@@ -33,13 +39,26 @@ const Page = ({ fields }) => {
         );
       };
 
+      case 'contentBlock': {
+        containerModules.push(
+          <ContentBlock key={module.sys.id} {...module.fields} />
+        );
+
+        return null;
+      };
+
       default: return null;
     }
   })
 
   return [
     <PageHeader key="header" />,
-    <Modules key="modules" />
+    <Modules key="modules" />,
+    <Container key="container">
+      <Flex className="-wrap-on-mobile">
+        { containerModules }
+      </Flex>
+    </Container>,
   ];
 };
 
