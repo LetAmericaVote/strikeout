@@ -5,6 +5,10 @@
   display: block;
   min-height: 3.25rem;
 
+  @include min-query(desktop-small) {
+    margin-bottom: 0.5rem;
+  }
+
   .header__logo {
     float: left;
 

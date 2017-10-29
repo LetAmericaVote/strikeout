@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Header from '../Header';
+import HeroBanner from '../HeroBanner';
 
 const Page = ({ fields }) => {
   if (! fields || ! Object.keys(fields).length) {
@@ -17,9 +18,22 @@ const Page = ({ fields }) => {
     />
   );
 
-  return (
-    <PageHeader />
-  );
+  const Modules = () => fields.modules.map(module => {
+    switch (module.sys.contentType.sys.id) {
+      case 'heroBanner': {
+        return (
+          <HeroBanner key={module.sys.id} {...module.fields} />
+        );
+      };
+
+      default: return null;
+    }
+  })
+
+  return [
+    <PageHeader key="header" />,
+    <Modules key="modules" />
+  ];
 };
 
 Page.mapStateToProps = state => ({
