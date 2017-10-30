@@ -1,13 +1,17 @@
 @import '../../styling/toolbox.scss';
 
-@mixin form-max() {
-  max-width: $max-width;
+@mixin form-max($divider: 1) {
+  max-width: $max-width / $divider;
   margin: auto;
 }
 
 .form {
   display: block;
   width: 100%;
+
+  .form__input:not([type=checkbox]) {
+    @include input-styling($white);
+  }
 
   &.-blue {
     background-color: $light-blue;
@@ -23,14 +27,19 @@
     .form__submit {
       @include button-styling($white, $red);
     }
-
-    .form__input {
-      @include input-styling($white);
-    }
   }
 
   &.-compact {
-    @include form-max();
+    @include form-max(2);
+    margin-bottom: $base-spacing;
+
+    .form__input {
+      margin: $base-spacing 0;
+    }
+
+    .form__input:first-of-type {
+      margin-top: 0;
+    }
   }
 
   &.-full {

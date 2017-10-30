@@ -38,15 +38,21 @@ class Form extends React.Component {
       </div>
     );
 
-    const Inputs = () => inputs.map(({ fields }) => (
-      <input
-        key={fields.label}
-        type={fields.type}
-        placeholder={fields.label}
-        required={fields.isRequired}
-        className="form__input"
-      />
-    ));
+    const Inputs = () => inputs.map(({ fields }) => {
+      if (fields.type === 'checkbox') {
+        return (<p>TODO: checkbox</p>);
+      }
+
+      return (
+        <input
+          key={fields.label}
+          type={fields.type}
+          placeholder={fields.label}
+          required={fields.isRequired}
+          className="form__input"
+        />
+      );
+    });
 
     const MessagingDisclaimer = () => requireMessagingDisclaimer ? (
       <p className="form__disclaimer">
