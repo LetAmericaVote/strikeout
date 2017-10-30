@@ -46,7 +46,8 @@
     "start": "webpack --watch --colors --config webpack.development.js",
     "build": "webpack --config webpack.production.js",
     "dev-server": "foreman start --procfile=Procfile.dev",
-    "server": "foreman start"
+    "server": "foreman start",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Joe Kent <hey@joekent.nyc>"
 }
