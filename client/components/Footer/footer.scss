@@ -1,0 +1,27 @@
+@import '../../styling/toolbox.scss';
+
+.footer {
+  background: $dark-blue;
+  padding: $base-spacing;
+  display: block;
+
+  .footer__logo {
+    height: 32px;
+    margin: auto;
+    display: block;
+  }
+
+  .footer__disclaimer {
+    @include type-size(0.8rem, 0.9rem, 1rem);
+    border: 1px solid $dark-cyan;
+    color: $dark-cyan;
+    padding: $base-spacing;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: $base-spacing;
+    text-align: center;
+  }
+}

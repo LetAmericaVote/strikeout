@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Header from '../Header';
+import Footer from '../Footer';
+
 import HeroBanner from '../HeroBanner';
 import Form from '../Form';
 import ContentBlock from '../ContentBlock';
@@ -21,6 +23,10 @@ const Page = ({ fields }) => {
       logo={headerFields.logo.fields.file.url}
       tabs={headerFields.tabs.map(tab => tab.fields)}
     />
+  );
+
+  const PageFooter = () => (
+    <Footer {...fields.footer.fields} />
   );
 
   const containerModules = [];
@@ -59,6 +65,7 @@ const Page = ({ fields }) => {
         { containerModules }
       </Flex>
     </Container>,
+    <PageFooter key="footer" />,
   ];
 };
 
