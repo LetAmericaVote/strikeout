@@ -33,6 +33,7 @@ class RoutingProvider extends React.Component {
     }
 
     this.props.setPathname(location.pathname);
+    window.scrollTo(0, 0);
   }
 
   pushLocation(path) {
