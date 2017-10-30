@@ -7,11 +7,14 @@
   }
 
   h2 {
-    @include spacing('margin-top', 0.3, 0.1);
-    @include spacing('margin-bottom', 0.3, 0.1);
+    @include spacing('margin-top', 1, 0.1);
+    @include spacing('margin-bottom', 1, 0.1);
+    @include type-size(1.1rem, 1.2rem, 1.4rem);
+
     color: $red;
     font-family: $base-font-family;
     font-weight: $base-font-weight;
+    text-transform: none;
   }
 
   h6 {

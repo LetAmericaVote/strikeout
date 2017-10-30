@@ -8,6 +8,7 @@ import Footer from '../Footer';
 import HeroBanner from '../HeroBanner';
 import Form from '../Form';
 import ContentBlock from '../ContentBlock';
+import Content from '../Content';
 
 import Container from '../Container';
 import Flex from '../Flex';
@@ -45,12 +46,18 @@ const Page = ({ fields }) => {
         );
       };
 
-      case 'contentBlock': {
+      case 'contentBlock': { // Temp hack.
         containerModules.push(
           <ContentBlock key={module.sys.id} {...module.fields} />
         );
 
         return null;
+      };
+
+      case 'content': {
+        return (
+          <Content key={module.sys.id} {...module.fields} />
+        );
       };
 
       default: return null;
