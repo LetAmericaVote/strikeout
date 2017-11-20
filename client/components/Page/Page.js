@@ -46,12 +46,10 @@ const Page = ({ fields }) => {
         );
       };
 
-      case 'contentBlock': { // Temp hack.
-        containerModules.push(
+      case 'contentBlock': {
+        return (
           <ContentBlock key={module.sys.id} {...module.fields} />
         );
-
-        return null;
       };
 
       case 'content': {
@@ -66,12 +64,9 @@ const Page = ({ fields }) => {
 
   return [
     <PageHeader key="header" />,
-    <Modules key="modules" />,
-    <Container key="container">
-      <Flex className="-wrap-on-mobile">
-        { containerModules }
-      </Flex>
-    </Container>,
+    <Flex key="modules" className="-wrap -justify-center">
+      <Modules />
+    </Flex>,
     <PageFooter key="footer" />,
   ];
 };

@@ -15,10 +15,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 app.get('*', (req, res, next) => {
-  if (req.url.startsWith('/public/')) {
-    return next();
-  }
-
   res.sendFile(`${__dirname}/template.html`);
 });
 

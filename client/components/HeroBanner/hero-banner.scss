@@ -3,6 +3,7 @@
 .hero-banner {
   display: block;
   position: relative;
+  @include flex-full-width();
 
   &.-center {
     text-align: center;
