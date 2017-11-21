@@ -3,4 +3,5 @@
 .content {
   margin: $base-spacing * 2 $base-spacing;
   display: block;
+  @include flex-full-width();
 }

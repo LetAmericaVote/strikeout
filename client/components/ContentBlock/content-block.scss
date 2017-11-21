@@ -3,16 +3,26 @@
 .content-block {
   padding: $base-spacing * 2;
   flex-basis: 100%;
-  flex-shrink: 0;
   margin-top: $base-spacing;
   margin-bottom: $base-spacing;
-  max-width: 460px;
   background-size: cover;
   background-position: center;
 
-  @include min-query(tablet) {
-    flex-basis: calc(50% - 2rem);
+  &.-half-display {
+    max-width: 460px;
+  }
+
+  &.-full-display {
     margin: 1rem;
+    max-width: $max-width;
+    width: 100%;
+  }
+
+  @include min-query(tablet) {
+    &.-half-display {
+      margin: 1rem;
+      flex-basis: calc(50% - 2rem);
+    }
   }
 
   &.-all-white {
@@ -27,5 +37,13 @@
     h1, h2, h3 {
       color: $light-blue;
     }
+  }
+
+  &.-center-align {
+    text-align: center;
+  }
+
+  > .content-block__link {
+    display: block;
   }
 }

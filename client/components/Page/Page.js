@@ -22,7 +22,7 @@ const Page = ({ fields }) => {
   const PageHeader = () => (
     <Header
       logo={headerFields.logo.fields.file.url}
-      tabs={headerFields.tabs.map(tab => tab.fields)}
+      tabs={(headerFields.tabs || []).map(tab => tab.fields)}
     />
   );
 
@@ -32,7 +32,7 @@ const Page = ({ fields }) => {
 
   const containerModules = [];
 
-  const Modules = () => fields.modules.map(module => {
+  const Modules = () => (fields.modules || []).map(module => {
     switch (module.sys.contentType.sys.id) {
       case 'heroBanner': {
         return (
