@@ -8,7 +8,8 @@ import './footer.scss';
 const Footer = (props) => {
   const {
     contactUsLink, disclaimer, donateLink,
-    facebookLink, logo, privacyPolicyLink, twitterLink,
+    facebookIcon, facebookLink, logo,
+    privacyPolicyLink, twitterIcon, twitterLink,
   } = props;
 
   const FooterColumn = ({ children }) => (
@@ -49,7 +50,24 @@ const Footer = (props) => {
   ) : null;
 
   const SocialIcons = () => [
-    // TODO
+    (facebookIcon && facebookLink) ? (
+      <Link
+        to={facebookLink}
+        className="footer__social-icon"
+        key="facebook"
+      >
+        <img src={facebookIcon.fields.file.url} />
+      </Link>
+    ) : null,
+    (twitterIcon && twitterLink) ? (
+      <Link
+        to={twitterLink}
+        className="footer__social-icon"
+        key="twitter"
+      >
+        <img src={twitterIcon.fields.file.url} />
+      </Link>
+    ) : null,
   ];
 
   return (
@@ -73,6 +91,13 @@ Footer.propTypes = {
   contactUsLink: PropTypes.string,
   disclaimer: PropTypes.string,
   donateLink: PropTypes.string,
+  facebookIcon: PropTypes.shape({
+    fields: PropTypes.shape({
+      file: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    }),
+  }),
   facebookLink: PropTypes.string,
   logo: PropTypes.shape({
     fields: PropTypes.shape({
@@ -82,6 +107,13 @@ Footer.propTypes = {
     }),
   }),
   privacyPolicyLink: PropTypes.string,
+  twitterIcon: PropTypes.shape({
+    fields: PropTypes.shape({
+      file: PropTypes.shape({
+        url: PropTypes.string,
+      }),
+    }),
+  }),
   twitterLink: PropTypes.string,
 };
 
@@ -89,9 +121,11 @@ Footer.defaultProps = {
   contactUsLink: null,
   disclaimer: null,
   donateLink: null,
+  facebookIcon: null,
   facebookLink: null,
   logo: null,
   privacyPolicyLink: null,
+  twitterIcon: null,
   twitterLink: null,
 };
 

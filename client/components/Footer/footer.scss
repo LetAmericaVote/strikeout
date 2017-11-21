@@ -43,4 +43,15 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .footer__social-icon {
+    display: inline-block;
+    margin-left: $half-spacing;
+    margin-right: $half-spacing;
+
+    img {
+      height: 32px;
+      display: block;
+    }
+  }
 }
