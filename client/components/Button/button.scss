@@ -1,0 +1,29 @@
+@import '../../styling/toolbox.scss';
+
+.button {
+  display: block;
+  padding: $half-spacing $base-spacing * 3;
+  cursor: pointer;
+
+  &.-full-width {
+    width: 100%;
+
+    @include min-query(tablet) {
+      width: auto;
+    }
+  }
+
+  &.-red {
+    background-color: $red;
+    color: $white;
+
+    &:active {
+      background-color: $darkened-red;
+    }
+  }
+
+  &.-center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

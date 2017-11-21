@@ -11,6 +11,7 @@ $base-font-family: 'MrEavesModOTBook';
 $bold-font-family: 'MrEavesModOT';
 
 $base-spacing: 1rem;
+$half-spacing: $base-spacing / 2;
 
 $breakpoints: (
   mobile-small: 320px,
@@ -28,6 +29,7 @@ $light-blue: #21c2de;
 $dark-cyan: #12606D;
 $dark-blue: #072C34;
 $red: #FF4C4D;
+$darkened-red: darken($red, 10%);
 $gray: #cccccc;
 $light-gray: #f2f2f2;
 $black: #000000;
