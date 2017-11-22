@@ -1,0 +1,9 @@
+@import '../../styling/toolbox.scss';
+
+.video-hero-banner {
+  @include block-100;
+
+  @include min-query(desktop-small) {
+    padding: $base-spacing;
+  }
+}

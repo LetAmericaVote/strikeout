@@ -9,8 +9,8 @@ import HeroBanner from '../HeroBanner';
 import Form from '../Form';
 import ContentBlock from '../ContentBlock';
 import Content from '../Content';
+import VideoHeroBanner from '../VideoHeroBanner';
 
-import Container from '../Container';
 import Flex from '../Flex';
 
 const Page = ({ fields }) => {
@@ -29,8 +29,6 @@ const Page = ({ fields }) => {
   const PageFooter = () => (
     <Footer {...fields.footer.fields} />
   );
-
-  const containerModules = [];
 
   const Modules = () => (fields.modules || []).map(module => {
     switch (module.sys.contentType.sys.id) {
@@ -57,6 +55,12 @@ const Page = ({ fields }) => {
           <Content key={module.sys.id} {...module.fields} />
         );
       };
+
+      case 'videoHeroBanner': {
+        return (
+          <VideoHeroBanner key={module.sys.id} {...module.fields} />
+        );
+      }
 
       default: return null;
     }

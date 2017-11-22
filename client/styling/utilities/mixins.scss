@@ -72,3 +72,8 @@
     border-bottom: 1px solid darken($color, 20%);
   }
 }
+
+@mixin block-100 {
+  display: block;
+  width: 100%;
+}

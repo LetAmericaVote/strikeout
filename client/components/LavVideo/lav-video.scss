@@ -1,0 +1,33 @@
+@import '../../styling/toolbox.scss';
+
+.lav-video {
+  @include block-100;
+  position: relative;
+
+  &.-is-playing:hover {
+    .video__toggle-button {
+      display: block !important;
+    }
+  }
+
+  .video__toggle-button {
+    display: block;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    left: calc(50% - 32px);
+    top: calc(50% - 32px);
+    z-index: map-get($z-indexes, video-controls);
+    cursor: pointer;
+
+    &.-is-playing {
+      display: none;
+    }
+  }
+
+  video {
+    @include block-100;
+  }
+}
