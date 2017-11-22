@@ -7,7 +7,8 @@ const CompressionPlugin = require('compression-webpack-plugin');
 const common = require('./webpack.common.js');
 
 const config = merge(common, {
-  devtool: 'source-map',
+  // TODO: devtool: 'source-map', https://github.com/webpack/webpack/issues/5931#issuecomment-342817047
+  devtool: 'none',
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
