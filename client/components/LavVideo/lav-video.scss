@@ -25,6 +25,11 @@
     &.-is-playing {
       display: none;
     }
+
+    @include min-query(desktop-small) {
+      width: 128px;
+      height: 128px;
+    }
   }
 
   video {
