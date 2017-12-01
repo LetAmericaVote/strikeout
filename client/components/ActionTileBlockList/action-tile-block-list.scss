@@ -1,0 +1,12 @@
+@import '../../styling/toolbox.scss';
+
+.action-tile-block-list {
+  @include flex-100();
+  justify-content: space-between;
+
+  @include min-query(desktop-small) {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+    padding-bottom: $base-spacing;
+  }
+}

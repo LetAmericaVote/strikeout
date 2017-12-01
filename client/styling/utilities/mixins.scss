@@ -77,3 +77,8 @@
   display: block;
   width: 100%;
 }
+
+@mixin flex-100 {
+  display: flex;
+  width: 100%;
+}

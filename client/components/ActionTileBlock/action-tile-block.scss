@@ -1,0 +1,27 @@
+@import '../../styling/toolbox.scss';
+
+.action-tile-block {
+  color: $white;
+  flex-basis: 100%;
+  padding: $base-spacing * 2 $base-spacing;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+
+  @include min-query(tablet) {
+    flex-basis: calc(50% - #{$half-spacing});
+  }
+
+  @include min-query(desktop-large) {
+    padding: $base-spacing * 3 $base-spacing * 2;
+  }
+
+  .action-tile-block__cta {
+    margin-top: auto;
+
+    button {
+      margin-top: $base-spacing;
+    }
+  }
+}

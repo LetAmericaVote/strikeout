@@ -10,6 +10,7 @@ import Form from '../Form';
 import ContentBlock from '../ContentBlock';
 import Content from '../Content';
 import VideoHeroBanner from '../VideoHeroBanner';
+import ActionTileBlockList from '../ActionTileBlockList';
 
 import Flex from '../Flex';
 
@@ -59,6 +60,12 @@ const Page = ({ fields }) => {
       case 'videoHeroBanner': {
         return (
           <VideoHeroBanner key={module.sys.id} {...module.fields} />
+        );
+      }
+
+      case 'actionTileBlockList': {
+        return (
+          <ActionTileBlockList key={module.sys.id} {...module.fields} />
         );
       }
 
