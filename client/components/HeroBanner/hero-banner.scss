@@ -1,9 +1,8 @@
 @import '../../styling/toolbox.scss';
 
 .hero-banner {
-  display: block;
+  @include block-100;
   position: relative;
-  @include flex-full-width();
 
   &.-center {
     text-align: center;

@@ -2,13 +2,11 @@
 
 .action-tile-block-list {
   @include flex-100();
+  @include max-width;
   justify-content: space-between;
   flex-wrap: wrap;
 
   @include min-query(desktop-small) {
-    padding-left: $base-spacing;
-    padding-right: $base-spacing;
-    padding-bottom: $base-spacing;
-    max-width: $max-width;
+    margin-bottom: $base-spacing;
   }
 }

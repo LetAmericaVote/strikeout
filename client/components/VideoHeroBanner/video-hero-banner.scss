@@ -2,8 +2,9 @@
 
 .video-hero-banner {
   @include block-100;
+  @include max-width;
 
   @include min-query(desktop-small) {
-    padding: $base-spacing;
+    margin-bottom: $base-spacing;
   }
 }

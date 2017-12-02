@@ -82,3 +82,8 @@
   display: flex;
   width: 100%;
 }
+
+
+@mixin max-width {
+  max-width: $max-width;
+}

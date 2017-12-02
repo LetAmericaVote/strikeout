@@ -14,6 +14,8 @@ import ActionTileBlockList from '../ActionTileBlockList';
 
 import Flex from '../Flex';
 
+import './page.scss';
+
 const Page = ({ fields }) => {
   if (! fields || ! Object.keys(fields).length) {
     return null;
@@ -75,7 +77,7 @@ const Page = ({ fields }) => {
 
   return [
     <PageHeader key="header" />,
-    <Flex key="modules" className="-wrap -justify-center">
+    <Flex key="modules" className="page__modules">
       <Modules />
     </Flex>,
     <PageFooter key="footer" />,

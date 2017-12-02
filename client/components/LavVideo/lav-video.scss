@@ -1,5 +1,15 @@
 @import '../../styling/toolbox.scss';
 
+$toggle-button-length-small: 64px;
+$toggle-button-length-large: $toggle-button-length-small * 2;
+
+@mixin toggle-button-size($basis) {
+  width: $basis;
+  height: $basis;
+  left: calc(50% - #{$basis / 2});
+  top: calc(50% - #{$basis / 2});
+}
+
 .lav-video {
   @include block-100;
   position: relative;
@@ -11,14 +21,11 @@
   }
 
   .video__toggle-button {
+    @include toggle-button-size($toggle-button-length-small);
     display: block;
     background-size: cover;
     background-position: center;
     position: absolute;
-    width: 64px;
-    height: 64px;
-    left: calc(50% - 32px);
-    top: calc(50% - 32px);
     z-index: map-get($z-indexes, video-controls);
     cursor: pointer;
 
@@ -27,8 +34,7 @@
     }
 
     @include min-query(desktop-small) {
-      width: 128px;
-      height: 128px;
+      @include toggle-button-size($toggle-button-length-large);
     }
   }
 
