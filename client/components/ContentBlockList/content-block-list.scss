@@ -1,7 +1,8 @@
 @import '../../styling/toolbox.scss';
 
-.action-tile-block-list {
+.content-block-list {
   @include flex-100();
+  margin-top: $base-spacing;
   justify-content: space-between;
   flex-wrap: wrap;
 

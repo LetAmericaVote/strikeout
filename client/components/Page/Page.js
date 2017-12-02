@@ -7,7 +7,7 @@ import Footer from '../Footer';
 
 import HeroBanner from '../HeroBanner';
 import Form from '../Form';
-import ContentBlock from '../ContentBlock';
+import ContentBlockList from '../ContentBlockList';
 import Content from '../Content';
 import VideoHeroBanner from '../VideoHeroBanner';
 import ActionTileBlockList from '../ActionTileBlockList';
@@ -45,9 +45,9 @@ const Page = ({ fields }) => {
         );
       };
 
-      case 'contentBlock': {
+      case 'contentBlockList': {
         return (
-          <ContentBlock key={module.sys.id} {...module.fields} />
+          <ContentBlockList key={module.sys.id} {...module.fields} />
         );
       };
 

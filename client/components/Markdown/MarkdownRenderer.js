@@ -16,7 +16,7 @@ const MarkdownRenderer = (props) => {
   return (
     <div className="markdown">
       <MarkdownErrorBoundry>
-        { compile(markdown, {}, {}).tree }
+        { compile(markdown || '', {}, {}).tree }
       </MarkdownErrorBoundry>
     </div>
   );

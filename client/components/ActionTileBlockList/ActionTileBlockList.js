@@ -15,7 +15,7 @@ const ActionTileBlockList = (props) => {
     <div className="action-tile-block-list">
       {actionTileBlocks.map(actionTileBlock => (
         <ActionTileBlock
-          key={actionTileBlock.id}
+          key={actionTileBlock.sys.id}
           {...actionTileBlock.fields}
         />
       ))}
@@ -25,7 +25,9 @@ const ActionTileBlockList = (props) => {
 
 ActionTileBlockList.propTypes = {
   actionTileBlocks: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
+    sys: PropTypes.shape({
+      id: PropTypes.string,
+    }),
     fields: PropTypes.shape(ActionTileBlock.propTypes),
   })),
 };

@@ -36,6 +36,8 @@ const ContentBlock = (props) => {
     '-center-align': textAlignment === CENTER_ALIGN,
   });
 
+  console.log(blockLink);
+
   const BlockContainer = ({ children }) => blockLink ? (
     <Link to={blockLink} className="content-block__link">
       { children }
