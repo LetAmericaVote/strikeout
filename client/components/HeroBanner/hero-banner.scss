@@ -18,9 +18,9 @@
   }
 
   .hero-banner__copy {
+    @include max-width;
     @include type-size(3rem, 3.5rem, 4.25rem);
-    padding: 3rem 1.5rem;
-    max-width: $max-width;
+    padding: $base-spacing * 3 $half-spacing;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -29,7 +29,12 @@
     text-shadow: $light-text-shadow;
 
     @include min-query(tablet) {
-      padding: 10rem $base-spacing;
+      padding: $base-spacing * 10 $base-spacing;
+    }
+
+    @include min-query(desktop-small) {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

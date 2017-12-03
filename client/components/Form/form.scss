@@ -1,13 +1,8 @@
 @import '../../styling/toolbox.scss';
 
-@mixin form-max($divider: 1) {
-  max-width: $max-width / $divider;
-  margin: auto;
-}
-
 .form {
-  display: block;
-  width: 100%;
+  @include block-100;
+  margin-bottom: $base-spacing;
 
   .form__input:not([type=checkbox]) {
     @include input-styling($white);
@@ -27,25 +22,17 @@
     .form__submit {
       @include button-styling($white, $red);
     }
+
+    .markdown {
+      color: $white;
+    }
   }
 
   &.-compact {
-    @include form-max(2);
-    margin-bottom: $base-spacing;
-
-    .form__input {
-      margin: $base-spacing 0;
-    }
-
-    .form__input:first-of-type {
-      margin-top: 0;
-    }
-  }
-
-  &.-full {
     @include min-query(tablet) {
       .form__inputs {
         display: flex;
+        flex-direction: row;
       }
 
       .form__input {
@@ -54,21 +41,54 @@
     }
   }
 
+  &.-dual {
+    .form__container {
+      @include min-query(desktop-small) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .form__primary, .form__secondary {
+        padding-top: $base-spacing;
+        padding-bottom: $base-spacing;
+
+        @include min-query(desktop-small) {
+          @include flex-basis-half($base-spacing);
+        }
+      }
+    }
+  }
+
   .form__container {
-    @include form-max();
-    display: block;
-    padding: $base-spacing;
+    @include max-width;
+    @include margin-center;
+    display: flex;
+    flex-direction: column;
+    margin-top: $base-spacing;
+    margin-bottom: $base-spacing;
+    padding-left: $half-spacing;
+    padding-right: $half-spacing;
+
+    @include min-query(desktop-small) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  .form__inputs {
+    margin-bottom: $half-spacing / 2;
   }
 
   .form__disclaimer {
     @include type-size(0.8rem, 0.8rem, 0.9rem);
     color: $light-gray;
+    margin-top: $half-spacing;
+    text-align: center;
   }
 
   .form__submit {
     width: 100%;
     text-align: center;
-    margin-top: $base-spacing;
 
     @include min-query(tablet) {
       margin-left: auto;

@@ -10,7 +10,7 @@
   flex-direction: column;
 
   @include min-query(desktop-small) {
-    flex-basis: calc(50% - #{$half-spacing});
+    @include flex-basis-half($half-spacing);
   }
 
   @include min-query(desktop-large) {

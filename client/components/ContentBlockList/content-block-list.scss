@@ -3,7 +3,6 @@
 .content-block-list {
   @include flex-100();
   @include max-width;
-  margin-top: $base-spacing;
   justify-content: space-between;
   flex-wrap: wrap;
 

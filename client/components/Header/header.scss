@@ -10,7 +10,7 @@
 
   @include min-query(desktop-small) {
     margin-bottom: $half-spacing;
-    padding: $base-spacing;
+    padding: $base-spacing 0;
   }
 
   .header__logo {

@@ -7,9 +7,9 @@
   background-size: cover;
   background-position: center;
 
-  @include min-query(tablet) {
+  @include min-query(desktop-small) {
     &.-half-display {
-      flex-basis: calc(50% - #{$half-spacing});
+      @include flex-basis-half($half-spacing);
     }
   }
 
