@@ -14,6 +14,10 @@
     .form__submit {
       @include button-styling($light-blue, $white);
     }
+
+    .markdown {
+      color: $white;
+    }
   }
 
   &.-navy {
@@ -21,6 +25,18 @@
 
     .form__submit {
       @include button-styling($white, $red);
+    }
+
+    .markdown {
+      color: $white;
+    }
+  }
+
+  &.-red {
+    background-color: $red;
+
+    .form__submit {
+      @include button-styling($red, $white);
     }
 
     .markdown {
@@ -59,6 +75,36 @@
     }
   }
 
+/*
+  &.-dual.-arrow {
+    position: relative;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 10%;
+      height: 100%;
+    }
+
+    .form__container {
+      .form__primary {
+        @include min-query(desktop-small) {
+          @include flex-basis-custom(60%, $base-spacing);
+          padding-right: 10%;
+        }
+      }
+
+      .form__secondary {
+        @include min-query(desktop-small) {
+          @include flex-basis-custom(40%, $base-spacing);
+        }
+      }
+    }
+  }
+*/
+
   .form__container {
     @include max-width;
     @include margin-center;
@@ -93,7 +139,7 @@
     @include min-query(tablet) {
       margin-left: auto;
       margin-right: auto;
-      width: auto;
+      width: calc(100% - #{$double-spacing});
     }
   }
 }

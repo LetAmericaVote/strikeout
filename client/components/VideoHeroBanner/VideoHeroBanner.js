@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import LavVideo from '../LavVideo';
+import Form from '../Form';
 import { fieldsFileUrl, fieldsFileType } from '../../helpers';
 
 import './video-hero-banner.scss';
 
 const VideoHeroBanner = (props) => {
   const {
-    bannerCopy, bannerTitle, formFields,
-    pauseButton, playButton, posterImage, video
+    form, pauseButton, playButton,
+    posterImage, video,
   } = props;
 
   const videoProps = {
@@ -20,20 +21,15 @@ const VideoHeroBanner = (props) => {
   return (
     <div className="video-hero-banner">
       <LavVideo {...videoProps} />
+      { form ? <Form {...form.fields} /> : null }
     </div>
   );
 };
 
 VideoHeroBanner.propTypes = {
-  bannerCopy: PropTypes.string,
-  bannerTitle: PropTypes.string,
-  formFields: PropTypes.arrayOf(PropTypes.shape({
-    fields: PropTypes.shape({
-      isRequired: PropTypes.bool,
-      label: PropTypes.string,
-      type: PropTypes.string,
-    }),
-  })),
+  form: PropTypes.shape({
+    fields: PropTypes.shape(Form.propTypes),
+  }),
   posterImage: PropTypes.shape({
     fields: PropTypes.shape({
       file: PropTypes.shape({
@@ -52,9 +48,7 @@ VideoHeroBanner.propTypes = {
 };
 
 VideoHeroBanner.defaultProps = {
-  bannerCopy: null,
-  bannerTitle: null,
-  formFields: [],
+  form: null,
   posterImage: null,
   video: null,
 };

@@ -5,8 +5,4 @@
   @include max-width;
   justify-content: space-between;
   flex-wrap: wrap;
-
-  @include min-query(desktop-small) {
-    margin-bottom: $base-spacing;
-  }
 }

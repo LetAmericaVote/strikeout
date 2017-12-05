@@ -61,6 +61,8 @@
 }
 
 @mixin input-styling($color) {
+  $darkened: darken($color, 20%);
+
   color: $color;
   padding: 0.25rem 0;
   border-bottom: 1px solid $color;
@@ -68,8 +70,12 @@
   display: block;
   margin-bottom: $base-spacing;
 
-  &:active {
-    border-bottom: 1px solid darken($color, 20%);
+  &:active, &:focus {
+    border-bottom: 1px solid $darkened;
+  }
+
+  &::placeholder {
+    color: $darkened;
   }
 }
 
@@ -99,4 +105,8 @@
 
 @mixin flex-basis-half($spacing) {
   flex-basis: calc(50% - #{$spacing});
+}
+
+@mixin flex-basis-custom($percent, $spacing) {
+  flex-basis: calc(#{$percent} - #{$spacing});
 }

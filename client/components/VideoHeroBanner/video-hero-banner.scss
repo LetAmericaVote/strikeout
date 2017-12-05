@@ -7,4 +7,18 @@
   @include min-query(desktop-small) {
     margin-bottom: $base-spacing;
   }
+
+  > .form {
+    margin-bottom: 0;
+    
+    .form__container {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      @include min-query(desktop-small) {
+        padding-left: $base-spacing;
+        padding-right: $base-spacing;
+      }
+    }
+  }
 }
