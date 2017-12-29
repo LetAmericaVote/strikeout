@@ -3,11 +3,12 @@
 .content-block {
   padding: $base-spacing * 2;
   flex-basis: 100%;
-  margin-bottom: $base-spacing;
   background-size: cover;
   background-position: center;
 
   @include min-query(desktop-small) {
+    margin-bottom: $base-spacing;
+    
     &.-half-display {
       @include flex-basis-half($half-spacing);
     }

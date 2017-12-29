@@ -22,6 +22,12 @@
 
     button {
       margin-top: $base-spacing;
+      width: 100%;
+      text-align: center;
+
+      @include min-query(desktop-small) {
+        width: auto;
+      }
     }
   }
 }

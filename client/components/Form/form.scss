@@ -2,7 +2,10 @@
 
 .form {
   @include block-100;
-  margin-bottom: $base-spacing;
+
+  @include min-query(desktop-small) {
+    margin-bottom: $base-spacing;
+  }
 
   .form__input:not([type=checkbox]) {
     @include input-styling($white);
@@ -45,6 +48,10 @@
   }
 
   &.-compact {
+    .form__submit {
+      width: 100%;
+    }
+
     @include min-query(tablet) {
       .form__inputs {
         display: flex;
@@ -53,6 +60,10 @@
 
       .form__input {
         margin-right: $base-spacing;
+      }
+
+      .form__submit {
+        width: auto;
       }
     }
   }
